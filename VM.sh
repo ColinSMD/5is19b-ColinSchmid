@@ -1,7 +1,6 @@
-sudo apt install prometheus-node-exporter
+sudo wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*-amd64.tar.gz
+tar xvfz node_exporter-*.*-amd64.tar.gz
+sudo mv node_exporter-*.*-amd64/node_exporter /usr/local/bin/
 
-sudo service node-exporter status
-
-sudo service node-exporter stop
-sudo service node-exporter start
-sudo service node-exporter restart
+sudo systemctl daemon-reload
+sudo systemctl start node_exporter
