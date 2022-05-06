@@ -20,7 +20,7 @@ sudo systemctl daemon-reload
 sudo systemctl start node_exporter
 sudo systemctl enable node_exporter
 
-wget "https://raw.githubusercontent.com/ColinSMD/5is19b-ColinSchmid/main/prometheus-config.yml", "-O", "/opt/prometheus-config.ÿml" ]
+wget "https://raw.githubusercontent.com/ColinSMD/5is19b-ColinSchmid/main/prometheus-config.yml", "-O", "/opt/prometheus-config.ÿml"
 docker run -d -p 9090:9090 -v /opt/prometheus-config.ÿml" --name prometheus-container prom/prometheus
 
 docker run -d -p 3000:3000 --name grafana-container -e "GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource" grafana/grafana-enterprise
