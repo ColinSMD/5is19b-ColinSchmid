@@ -20,6 +20,7 @@ sudo systemctl daemon-reload
 sudo systemctl start node_exporter
 sudo systemctl enable node_exporter
 
-docker run -d --name prometheus-container prom/prometheus
-
-docker run -d --name grafana-container grafana/grafana
+wget "https://raw.githubusercontent.com/ColinSMD/5is19b-ColinSchmid/main/prometheus.yml", "-O", "/opt/prometheus.yml"
+docker run -d --name prometheus-container prom/prometheus --config.file=/opt/prometheus.yml
+wget "https://raw.githubusercontent.com/ColinSMD/5is19b-ColinSchmid/main/grafana.yml", "-O", "/opt/grafana.yml"
+docker run -d --name grafana-container grafana/grafana --config.file=/opt/grafana.yml
