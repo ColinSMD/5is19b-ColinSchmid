@@ -20,6 +20,6 @@ sudo systemctl daemon-reload
 sudo systemctl start node_exporter
 sudo systemctl enable node_exporter
 
-docker run -d --name prometheus-container prom/prometheus
+docker run -d -p 9090:9090 --name prometheus-container prom/prometheus
 
-docker run -d --name grafana-container grafana/grafana-enterprise
+docker run -d -p 3000:3000 --name grafana-container -e "GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource" grafana/grafana-enterprise
