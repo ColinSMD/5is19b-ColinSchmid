@@ -22,5 +22,5 @@ sudo systemctl enable node_exporter
 
 docker pull prom/prometheus
 docker run --name prometheus-container prom/prometheus
-docker run pull grafana/grafana
+
 docker run --name grafana-container grafana/grafana
